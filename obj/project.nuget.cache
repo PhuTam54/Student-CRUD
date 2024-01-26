@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6bYdlA3IW1eXh0/R8aKOqBTqO25i9ozSj4bGSYW4FfKMXhol+Vqek4KncODyw4+V3d7AkpiU68+epwOIZPXAzw==",
+  "dgSpecHash": "H6VaVVJD5KR2F/PZv9vSUx3wuqAZkBy9b5NABX7gP4M5ci6inrZa9qe96GAGn7yHDbwyw43hfRY8QjZIn75LAQ==",
   "success": true,
-  "projectFilePath": "C:\\fptaptech\\sem3\\Student-CRUD\\Student-CRUD.csproj",
+  "projectFilePath": "C:\\fptaptech\\sem3\\WDA\\Student-CRUD\\Student-CRUD.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pc\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

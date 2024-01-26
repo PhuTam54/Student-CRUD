@@ -13,6 +13,9 @@
     <thead>
         <tr>
             <th>
+                No.
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Group)
             </th>
             <th>
@@ -22,7 +25,10 @@
                 @Html.DisplayNameFor(model => model.FullName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.isPresent)
+                Absent
+            </th>
+            <th>
+                Present
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Comment)
@@ -33,8 +39,15 @@
         </tr>
     </thead>
     <tbody>
+        @{
+            var index = 0;
+        }
 @foreach (var item in Model) {
-        <tr>
+            index++;
+            <tr>
+                <td>
+                    @index
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Group)
             </td>
@@ -45,9 +58,13 @@
                 @Html.DisplayFor(modelItem => item.FullName)
             </td>
             <td>
-                    <input type="checkbox" id="vehicle1" name="vehicle1" value="@item.isPresent">
-                    <label for="vehicle1"></label><br>
+                    <input type="checkbox" id="absent" name="absent" @(item.isPresent ? "" : "checked")>
+                    <label for="absent"></label><br>
             </td>
+                <td>
+                    <input type="checkbox" id="isPresent" name="isPresent" @(item.isPresent ? "checked" : "")>
+                    <label for="isPresent"></label><br>
+                </td>
             <td>
                     <textarea>@Html.DisplayFor(modelItem => item.Comment)</textarea>
             </td>

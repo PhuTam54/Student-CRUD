@@ -11214,11 +11214,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\fptaptech\\sem3\\Student-CRUD\\Student-CRUD.csproj",
+      "projectUniqueName": "C:\\fptaptech\\sem3\\WDA\\Student-CRUD\\Student-CRUD.csproj",
       "projectName": "Student-CRUD",
-      "projectPath": "C:\\fptaptech\\sem3\\Student-CRUD\\Student-CRUD.csproj",
+      "projectPath": "C:\\fptaptech\\sem3\\WDA\\Student-CRUD\\Student-CRUD.csproj",
       "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-      "outputPath": "C:\\fptaptech\\sem3\\Student-CRUD\\obj\\",
+      "outputPath": "C:\\fptaptech\\sem3\\WDA\\Student-CRUD\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
