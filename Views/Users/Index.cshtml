@@ -36,42 +36,49 @@
             <th>
                 @Html.DisplayNameFor(model => model.Image)
             </th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
         @{
             var index = 0;
         }
-@foreach (var item in Model) {
+        @foreach (var item in Model)
+        {
             index++;
             <tr>
                 <td>
                     @index
                 </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Group)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rollnumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FullName)
-            </td>
-            <td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Group)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rollnumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
                     <input type="checkbox" id="absent" name="absent" @(item.isPresent ? "" : "checked")>
                     <label for="absent"></label><br>
-            </td>
+                </td>
                 <td>
                     <input type="checkbox" id="isPresent" name="isPresent" @(item.isPresent ? "checked" : "")>
                     <label for="isPresent"></label><br>
                 </td>
-            <td>
+                <td>
                     <textarea>@Html.DisplayFor(modelItem => item.Comment)</textarea>
-            </td>
-            <td>
-                <img src="@Html.DisplayFor(modelItem => item.Image)" alt="img" width="50">
-            </td>
-        </tr>
-}
+                </td>
+                <td>
+                    <img src="@Html.DisplayFor(modelItem => item.Image)" alt="img" width="50">
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Rollnumber">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Rollnumber">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Rollnumber">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
