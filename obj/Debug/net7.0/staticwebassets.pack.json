@@ -245,6 +245,30 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\fptaptech\\sem3\\WDA\\Student-CRUD\\wwwroot\\uploads\\e0kxgfru.5ut.png",
+      "PackagePath": "staticwebassets\\uploads\\e0kxgfru.5ut.png"
+    },
+    {
+      "Id": "C:\\fptaptech\\sem3\\WDA\\Student-CRUD\\wwwroot\\uploads\\pk5dfyml.uih.png",
+      "PackagePath": "staticwebassets\\uploads\\pk5dfyml.uih.png"
+    },
+    {
+      "Id": "C:\\fptaptech\\sem3\\WDA\\Student-CRUD\\wwwroot\\uploads\\rbj2sv4r.ywe.png",
+      "PackagePath": "staticwebassets\\uploads\\rbj2sv4r.ywe.png"
+    },
+    {
+      "Id": "C:\\fptaptech\\sem3\\WDA\\Student-CRUD\\wwwroot\\uploads\\wz0nzqwo.o05.png",
+      "PackagePath": "staticwebassets\\uploads\\wz0nzqwo.o05.png"
+    },
+    {
+      "Id": "C:\\fptaptech\\sem3\\WDA\\Student-CRUD\\wwwroot\\uploads\\xvctk5k3.nfn.png",
+      "PackagePath": "staticwebassets\\uploads\\xvctk5k3.nfn.png"
+    },
+    {
+      "Id": "C:\\fptaptech\\sem3\\WDA\\Student-CRUD\\wwwroot\\uploads\\zb05rkjs.dlp.png",
+      "PackagePath": "staticwebassets\\uploads\\zb05rkjs.dlp.png"
+    },
+    {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Student-CRUD.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

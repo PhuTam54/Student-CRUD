@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting.Internal;
 using Student_CRUD.Data;
 using Student_CRUD.Models;
 
@@ -13,11 +14,14 @@ namespace Student_CRUD.Controllers
     public class UsersController : Controller
     {
         private readonly Student_CRUDContext _context;
+        private readonly IWebHostEnvironment _hostingEnvironment;
 
-        public UsersController(Student_CRUDContext context)
+        public UsersController(Student_CRUDContext context, IWebHostEnvironment hostingEnvironment)
         {
             _context = context;
+            _hostingEnvironment = hostingEnvironment;
         }
+
 
         // GET: Users
         public async Task<IActionResult> Index()
@@ -56,13 +60,40 @@ namespace Student_CRUD.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Rollnumber,Group,Image,Comment,isPresent,LastName,FirstName")] User user)
+        public async Task<IActionResult> Create([Bind("Rollnumber,Group,Comment,isPresent,LastName,FirstName")] User user, IFormFile Image)
         {
             if (true)
             {
-                _context.Add(user);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+            var allowedExtenstions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
+
+            var filePaths = new List<string>();
+                // Check if the file has a valid extensions
+                var fileExtension = Path.GetExtension(Image.FileName).ToLowerInvariant();
+                if (string.IsNullOrEmpty(fileExtension) || !allowedExtenstions.Contains(fileExtension))
+                {
+                    return BadRequest("Invalid file extension. Allowed extensions are: " + string.Join(", ", allowedExtenstions));
+                };
+
+                if (Image.Length > 0)
+                {
+                    // Change the folder path
+                    var uploadFolderPath = Path.Combine(_hostingEnvironment.WebRootPath, "uploads");
+                    Directory.CreateDirectory(uploadFolderPath);
+
+                    var fileName = Path.GetRandomFileName() + fileExtension;
+                    var filePath = Path.Combine(uploadFolderPath, fileName);
+                    filePaths.Add(filePath);
+
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await Image.CopyToAsync(stream);
+                    }
+
+                    user.Image = "/uploads/" + fileName;
+                }
+            _context.Add(user);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
             }
             return View(user);
         }
